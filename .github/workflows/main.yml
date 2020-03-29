@@ -25,6 +25,6 @@ jobs:
       run: |
         wget https://alcide.blob.core.windows.net/generic/whitelist-generator/generator
         chmod +x generator
-        ./generator -k ${ALCIDE_PROCESS_WHITELIST_HASH_KEY} -i my-app
+        ./generator -k ${ALCIDE_PROCESS_WHITELIST_HASH_KEY} -i my-app/app.py
       env:
         ALCIDE_PROCESS_WHITELIST_HASH_KEY: ${{ secrets.ALCIDE_PROCESS_WHITELIST_HASH_KEY }}
