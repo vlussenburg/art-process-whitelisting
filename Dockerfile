@@ -18,7 +18,7 @@ ENV ALCIDE_PROCESS_WHITELIST_HASH_KEY ALCIDE_PROCESS_WHITELIST_HASH_KEY
 ADD https://alcide.blob.core.windows.net/generic/whitelist-generator/generator /generator
 
 RUN chmod +x /generator &&\
-    /generator -k ${ALCIDE_PROCESS_WHITELIST_HASH_KEY} -i /app.py &&\
+    /generator -k ${ALCIDE_PROCESS_WHITELIST_HASH_KEY} -i /usr/bin/python &&\
     rm -f generator
 ### End of integration section ###
 
