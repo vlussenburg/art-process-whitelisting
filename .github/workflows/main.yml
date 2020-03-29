@@ -7,8 +7,6 @@ name: CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -27,6 +25,6 @@ jobs:
       run: |
         wget https://alcide.blob.core.windows.net/generic/whitelist-generator/generator
         chmod +x generator
-        ./generator -k ${ALCIDE_PROCESS_WHITELIST_HASH_KEY} -i /my-app
+        ./generator -k ${ALCIDE_PROCESS_WHITELIST_HASH_KEY} -i my-app
       env:
         ALCIDE_PROCESS_WHITELIST_HASH_KEY: ${{ secrets.ALCIDE_PROCESS_WHITELIST_HASH_KEY }}
